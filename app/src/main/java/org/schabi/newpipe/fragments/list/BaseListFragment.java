@@ -19,6 +19,7 @@ import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.schabi.newpipe.util.CarUi;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.extractor.InfoItem;
@@ -212,7 +213,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
         final Resources resources = activity.getResources();
         int width = resources.getDimensionPixelSize(R.dimen.video_item_grid_thumbnail_image_width);
         width += (24 * resources.getDisplayMetrics().density);
-        final int spanCount = Math.floorDiv(resources.getDisplayMetrics().widthPixels, width);
+        // Car: fixed column count (res/values/car_ui.xml), otherwise as many as fit
+        final int spanCount = CarUi.gridSpanCount(activity, width);
         final GridLayoutManager lm = new GridLayoutManager(activity, spanCount);
         lm.setSpanSizeLookup(infoListAdapter.getSpanSizeLookup(spanCount));
         return lm;

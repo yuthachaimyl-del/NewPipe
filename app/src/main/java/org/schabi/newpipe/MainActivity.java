@@ -84,6 +84,7 @@ import org.schabi.newpipe.player.playqueue.PlayQueue;
 import org.schabi.newpipe.settings.UpdateSettingsFragment;
 import org.schabi.newpipe.settings.migration.MigrationManager;
 import org.schabi.newpipe.util.Constants;
+import org.schabi.newpipe.util.CarUi;
 import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.KioskTranslator;
 import org.schabi.newpipe.util.Localization;
@@ -178,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setSupportActionBar(toolbarLayoutBinding.toolbar);
+        CarUi.enlargeToolbar(toolbarLayoutBinding.toolbar);
         try {
             setupDrawer();
         } catch (final Exception e) {

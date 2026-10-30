@@ -9,10 +9,11 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="@dimen/car_toolbar_height"
         android:background="?attr/colorPrimary"
         android:gravity="center_vertical"
-        android:minHeight="?attr/actionBarSize"
+        android:minHeight="@dimen/car_toolbar_height"
+        app:contentInsetStartWithNavigation="0dp"
         android:theme="@style/ToolbarTheme">
 
         <include

@@ -161,6 +161,13 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
         }
         inflater.inflate(R.menu.menu_main_fragment, menu);
 
+        // Car: the search item uses a big custom button (actionLayout), route its click
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
+        if (searchItem != null && searchItem.getActionView() != null) {
+            searchItem.getActionView().findViewById(R.id.car_action_search)
+                    .setOnClickListener(v -> onOptionsItemSelected(searchItem));
+        }
+
         final ActionBar supportActionBar = activity.getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(false);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Big search button for the car toolbar: 72dp touch target, 42dp icon. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/car_toolbar_button_gap"
+    android:paddingEnd="@dimen/car_toolbar_button_gap">
+
+    <ImageButton
+        android:id="@+id/car_action_search"
+        android:layout_width="@dimen/car_toolbar_button_size"
+        android:layout_height="@dimen/car_toolbar_button_size"
+        android:layout_gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/search"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_search"
+        app:tint="?attr/colorControlNormal" />
+</FrameLayout>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="@dimen/car_toolbar_height"
     tools:background="?attr/colorPrimary">
 
     <org.schabi.newpipe.views.NewPipeEditText
@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="4dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginRight="@dimen/car_toolbar_button_size"
+        android:textSize="26sp"
         android:layout_marginBottom="4dp"
         android:background="@null"
         android:focusable="true"
@@ -28,8 +29,8 @@
 
     <FrameLayout
         android:id="@+id/toolbar_search_clear"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/car_toolbar_button_size"
+        android:layout_height="@dimen/car_toolbar_button_size"
         android:layout_gravity="right|center_vertical"
         android:contentDescription="@string/clear"
         android:focusable="true"
@@ -43,8 +44,8 @@
 
         <ImageView
             android:id="@+id/toolbar_search_clear_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/car_toolbar_icon_size"
+            android:layout_height="@dimen/car_toolbar_icon_size"
             android:layout_gravity="center"
             android:contentDescription="@string/search"
             android:scaleType="fitCenter"

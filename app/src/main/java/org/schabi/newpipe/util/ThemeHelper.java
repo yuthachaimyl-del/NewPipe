@@ -374,8 +374,9 @@ public final class ThemeHelper {
         } else {
             // Auto mode - evaluate whether to use Grid based on screen real estate.
             final Configuration configuration = context.getResources().getConfiguration();
-            final boolean useGrid = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-                    && configuration.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE);
+            final boolean useGrid = CarUi.isCarScreen(context)
+                    || (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+                    && configuration.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE));
             if (useGrid) {
                 result = ItemViewMode.GRID;
             } else {
@@ -409,7 +410,7 @@ public final class ThemeHelper {
      * @return the span count of grid list items
      */
     public static int getGridSpanCount(final Context context, final int minWidth) {
-        return Math.max(1, context.getResources().getDisplayMetrics().widthPixels / minWidth);
+        return CarUi.gridSpanCount(context, minWidth);
     }
 
     @StyleRes

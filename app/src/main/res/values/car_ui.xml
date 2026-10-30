@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Car head unit (ultra-wide, e.g. 1920x720) UI sizes.
+     Home grid and toolbar are scaled separately, so the system DPI can stay as it is. -->
+<resources>
+    <!-- Grid on the home tabs: fixed number of columns on a car screen -->
+    <integer name="car_grid_span_count">5</integer>
+    <!-- Screens wider than this (width/height) are treated as a car head unit -->
+    <item name="car_min_aspect_ratio" format="float" type="dimen">2.0</item>
+
+    <!-- Top bar -->
+    <dimen name="car_toolbar_height">80dp</dimen>
+    <dimen name="car_toolbar_button_size">72dp</dimen>   <!-- touch target -->
+    <dimen name="car_toolbar_icon_size">42dp</dimen>     <!-- icon inside -->
+    <dimen name="car_toolbar_button_gap">12dp</dimen>    <!-- space between buttons -->
+</resources>
