@@ -24,7 +24,10 @@ import org.schabi.newpipe.R;
 public final class CarUi {
     private CarUi() { }
 
-    /** Landscape screen whose width/height is at least car_min_aspect_ratio (e.g. 1920x720 = 2.67). */
+    /**
+     * Landscape screen whose width/height is at least car_min_aspect_ratio
+     * (e.g. 1920x720 = 2.67).
+     */
     public static boolean isCarScreen(@NonNull final Context context) {
         final Resources res = context.getResources();
         if (res.getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE) {
@@ -66,7 +69,8 @@ public final class CarUi {
         }
         toolbar.setMinimumHeight(barHeight);
         applyToButtons(toolbar);
-        toolbar.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> applyToButtons(toolbar));
+        toolbar.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) ->
+                applyToButtons(toolbar));
     }
 
     /** The navigation (hamburger / back) button is an ImageButton child of the Toolbar. */
